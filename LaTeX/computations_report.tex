@@ -1,0 +1,663 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, linkcolor=blue!70!black, citecolor=blue!70!black, urlcolor=blue!70!black}
+
+\title{\textbf{Massive Superstring Spectrum and $D=11$ $\mathrm{SO}(10)$ Structure:\\ Exact Algebraic Derivation and Comprehensive Verification}}
+\author{\textbf{Massive Modes Analysis Framework}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report presents an exhaustive, ab initio algebraic verification of the Bars conjecture (hep-th/9503228) regarding the emergence of 11-dimensional $\mathrm{SO}(10)$ massive supermultiplets in 10-dimensional Type IIA superstring theory. We derive the exact light-cone Green-Schwarz open superstring Fock space up to mass level $n=10$, factorize the universal 256-state massive supersymmetry factor $\mathcal{M}_{\text{susy}} = \mathbf{128}_B \oplus \mathbf{128}_F$, invert the $\mathrm{SO}(8)$ and $\mathrm{SO}(9)$ branching rules, and demonstrate that the cumulative spectrum $R_n = \sum_{l=1}^n r_l$ lifts into strictly positive integer combinations of $\mathrm{SO}(10)$ irreducible representations with zero discrepancy across all 10 levels. All algorithms, mathematical uniqueness proofs, code architecture, and complete term-by-term matching tables are fully documented.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Physics Overview}
+\label{sec:physics}
+In 10-dimensional Type IIA superstring theory, the light-cone little group for massless states is $\mathrm{SO}(8)$, while the little group for massive particles in $D=10$ Minkowski spacetime is $\mathrm{SO}(9)$. If 10D Type IIA superstring theory is non-perturbatively dual to 11-dimensional M-theory compactified on a circle $S^1$ of radius $R_{11}$, the massive states carrying non-zero longitudinal momentum $P_{11} = n/R_{11}$ along the 11th dimension must organize into complete representations of the $D=11$ massive little group $\mathrm{SO}(10)$.
+In \cite{Bars1995}, Itzhak Bars proposed that the massive open and closed superstring spectrum, when combined with the non-perturbative Kaluza-Klein and D-brane states carrying momentum along the 11th dimension, assembles into complete $D=11$ $\mathrm{SO}(10)$ supermultiplets.
+
+\subsection{Light-Cone Green-Schwarz Oscillators}
+In the light-cone gauge of the 10-dimensional Green-Schwarz (GS) open superstring, physical states are created by transverse bosonic and fermionic harmonic oscillators:
+\begin{enumerate}
+    \item \textbf{Bosonic Oscillators:} $\alpha_{-n}^i$ with mode number $n \ge 1$ and transverse vector index $i = 1, \dots, 8$, transforming in the vector representation $\mathbf{8}_v$ of $\mathrm{SO}(8)$.
+    \item \textbf{Fermionic Oscillators:} $S_{-n}^a$ with mode number $n \ge 1$ and transverse spinor index $a = 1, \dots, 8$, transforming in the chiral spinor representation $\mathbf{8}_s$ of $\mathrm{SO}(8)$.
+\end{enumerate}
+The multi-variable partition function tracking the string oscillator mass level $q = e^{2\pi i \tau}$ (with mass-squared $\alpha' M^2 = l$) and the four $\mathrm{SO}(8)$ Cartan charges $x = (x_1, x_2, x_3, x_4)$ is given by:
+\begin{equation}
+    \mathcal{Z}(q, x) = \prod_{n=1}^\infty \frac{\prod_{w \in \mathbf{8}_s} \left(1 + q^n e^{w \cdot x}\right)}{\prod_{w \in \mathbf{8}_v} \left(1 - q^n e^{w \cdot x}\right)} = 1 + \sum_{l=1}^\infty q^l \mathcal{F}_l(x).
+    \label{eq:partition_fn}
+\end{equation}
+Order by order in $q$, the level-$l$ character polynomial $\mathcal{F}_l(x) = \sum_w c_w e^{w \cdot x}$ gives the exact multiplicity $c_w \in \mathbb{Z}_{\ge 0}$ of physical Fock states carrying $\mathrm{SO}(8)$ weight $w$.
+
+\subsection{Universal Massive Supersymmetry Factorization}
+At the massless ground state $l=0$, the open string states form the 10D $\mathcal{N}=1$ super-Maxwell multiplet $(\mathbf{8}_v \oplus \mathbf{8}_s)$ consisting of 8 bosons and 8 fermions.
+For any massive level $l \ge 1$, the fermionic zero modes satisfy the Clifford algebra $\{S_0^a, S_0^b\} = 2 \delta^{ab} p^+$. Quantization of these zero modes yields the universal 256-state massive supermultiplet $\mathcal{M}_{\text{susy}}$:
+\begin{equation}
+    \mathcal{M}_{\text{susy}} = (\mathbf{8}_v \oplus \mathbf{8}_s) \otimes (\mathbf{8}_v \oplus \mathbf{8}_s).
+\end{equation}
+Decomposing this tensor product into irreducible $\mathrm{SO}(8)$ representations:
+\begin{align}
+    \text{Bosonic sector:}\quad & (\mathbf{8}_v \otimes \mathbf{8}_v) \oplus (\mathbf{8}_s \otimes \mathbf{8}_s) = (\mathbf{1} \oplus \mathbf{28} \oplus \mathbf{35}_v) \oplus (\mathbf{1} \oplus \mathbf{28} \oplus \mathbf{35}_s) = \mathbf{44} \oplus \mathbf{84} = \mathbf{128}_B, \\
+    \text{Fermionic sector:}\quad & 2 \times (\mathbf{8}_v \otimes \mathbf{8}_s) = 2 \times (\mathbf{8}_c \oplus \mathbf{56}_c) = \mathbf{128}_F.
+\end{align}
+Thus, $\mathcal{M}_{\text{susy}} = \mathbf{128}_B \oplus \mathbf{128}_F$. Spacetime supersymmetry requires that every massive level $l \ge 1$ factorizes as:
+\begin{equation}
+    \mathcal{F}_l = \mathcal{M}_{\text{susy}} \otimes r^{(l)} = (128_B \oplus 128_F) \otimes (r_B^{(l)} \oplus r_F^{(l)}),
+    \label{eq:susy_factorization}
+\end{equation}
+where $r^{(l)} = r_B^{(l)} \oplus r_F^{(l)}$ is the reduced \emph{prefactor representation}. The total physical state count is:
+\begin{equation}
+    N_B = N_F = 128 \times \left(\dim r_B^{(l)} + \dim r_F^{(l)}\right),
+\end{equation}
+ensuring exact spacetime supersymmetry at every massive level.
+
+\subsection{The Bars Lift Proposals}
+\begin{itemize}
+    \item \textbf{Proposal III.B (Single Multiplicity Scheme):} Non-perturbative 11D states provide the missing components such that the cumulative sum:
+    \begin{equation}
+        R^{(n)} = \sum_{l=1}^n r^{(l)}
+    \end{equation}
+    forms complete, non-negative irreducible representations of $\mathrm{SO}(10)$.
+    \item \textbf{Proposal III.C (Higher Multiplicity Scheme):} Takes into account partition degeneracies $p(n-l)$ for longitudinal momentum modes: $R_{\text{III.C}}^{(n)} = \sum_{l=1}^n p(n-l) r^{(l)}$. Because Proposal III.C is analytically implied whenever Proposal III.B holds, verifying III.B is the central necessary and sufficient test.
+\end{itemize}
+
+\section{Representation Theory Conventions}
+\label{sec:rep_theory}
+We use the standard orthogonal basis of highest-weight vectors $h = (h_1, \dots, h_k)$ for the classical Lie algebras $D_4 = \mathfrak{so}(8)$, $B_4 = \mathfrak{so}(9)$, and $D_5 = \mathfrak{so}(10)$.
+
+\subsection{Lie Algebra Definitions and Weights}
+\begin{enumerate}
+    \item \textbf{$\bm{D_4 = \mathfrak{so}(8)}$:} Highest weights $h = (h_1, h_2, h_3, h_4)$ satisfying $h_1 \ge h_2 \ge h_3 \ge |h_4|$.
+    \begin{itemize}
+        \item Vector: $(1, 0, 0, 0) = \mathbf{8}_v$
+        \item Chiral Spinor: $(1/2, 1/2, 1/2, 1/2) = \mathbf{8}_s$
+        \item Anti-Chiral Spinor: $(1/2, 1/2, 1/2, -1/2) = \mathbf{8}_c$
+        \item 2-form: $(1, 1, 0, 0) = \mathbf{28}$
+        \item Self-Dual 4-form: $(1, 1, 1, 1) = \mathbf{35}_s$, Anti-Self-Dual: $(1, 1, 1, -1) = \mathbf{35}_c$
+    \end{itemize}
+    \item \textbf{$\bm{B_4 = \mathfrak{so}(9)}$:} Highest weights $h = (h_1, h_2, h_3, h_4)$ satisfying $h_1 \ge h_2 \ge h_3 \ge h_4 \ge 0$.
+    \begin{itemize}
+        \item Vector: $(1, 0, 0, 0) = \mathbf{9}$
+        \item 2-form: $(1, 1, 0, 0) = \mathbf{36}$
+        \item Symmetric Traceless Rank 2: $(2, 0, 0, 0) = \mathbf{44}$
+        \item 3-form: $(1, 1, 1, 0) = \mathbf{84}$
+        \item 4-form: $(1, 1, 1, 1) = \mathbf{126}$
+        \item Majorana Spinor: $(1/2, 1/2, 1/2, 1/2) = \mathbf{16}$
+        \item Vector-Spinor: $(3/2, 1/2, 1/2, 1/2) = \mathbf{128}$
+    \end{itemize}
+    \item \textbf{$\bm{D_5 = \mathfrak{so}(10)}$:} Highest weights $H = (H_1, H_2, H_3, H_4, H_5)$ satisfying $H_1 \ge H_2 \ge H_3 \ge H_4 \ge |H_5|$.
+    \begin{itemize}
+        \item Vector: $(1, 0, 0, 0, 0) = \mathbf{10}$
+        \item Adjoint (2-form): $(1, 1, 0, 0, 0) = \mathbf{45}$
+        \item Symmetric Traceless Rank 2: $(2, 0, 0, 0, 0) = \mathbf{54}$
+        \item 3-form: $(1, 1, 1, 0, 0) = \mathbf{120}$
+        \item \textbf{Chiral Self-Dual 5-form:} $(1, 1, 1, 1, 1) = \mathbf{126}$
+        \item \textbf{Anti-Chiral 5-form:} $(1, 1, 1, 1, -1) = \mathbf{\overline{126}}$
+        \item 4-form: $(1, 1, 1, 1, 0) = \mathbf{210}$
+        \item Weyl Spinor: $(1/2, 1/2, 1/2, 1/2, 1/2) = \mathbf{16}$
+        \item Vector-Spinor: $(3/2, 1/2, 1/2, 1/2, 1/2) = \mathbf{144}$
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Weyl Dimension Formulas}
+For $D_n = \mathfrak{so}(2n)$ and $B_n = \mathfrak{so}(2n+1)$, the dimension of an irrep with highest weight $h$ and Weyl vector $\rho$ is given by:
+\begin{align}
+    \dim_{D_4}(h) &= \prod_{1 \le i < j \le 4} \frac{(l_i - l_j)(l_i + l_j)}{(\rho_i - \rho_j)(\rho_i + \rho_j)}, \quad l = h + (3, 2, 1, 0), \\
+    \dim_{B_4}(h) &= \prod_{i=1}^4 \frac{l_i}{\rho_i} \prod_{1 \le i < j \le 4} \frac{(l_i - l_j)(l_i + l_j)}{(\rho_i - \rho_j)(\rho_i + \rho_j)}, \quad l = h + (3.5, 2.5, 1.5, 0.5), \\
+    \dim_{D_5}(H) &= \prod_{1 \le i < j \le 5} \frac{(l_i - l_j)(l_i + l_j)}{(\rho_i - \rho_j)(\rho_i + \rho_j)}, \quad l = H + (4, 3, 2, 1, 0).
+\end{align}
+
+\subsection{Exact Gelfand-Tsetlin Branching Rules}
+\begin{enumerate}
+    \item \textbf{$\bm{\mathrm{SO}(10) \to \mathrm{SO}(9)}$:} An irrep $H = (H_1, H_2, H_3, H_4, H_5)$ branches to all $\mathrm{SO}(9)$ irreps $h = (h_1, h_2, h_3, h_4)$ satisfying the interlacing inequalities:
+    \begin{equation}
+        H_1 \ge h_1 \ge H_2 \ge h_2 \ge H_3 \ge h_3 \ge H_4 \ge h_4 \ge |H_5|.
+        \label{eq:so10_to_so9_gt}
+    \end{equation}
+    \item \textbf{$\bm{\mathrm{SO}(9) \to \mathrm{SO}(8)}$:} An irrep $h = (h_1, h_2, h_3, h_4)$ branches to all $\mathrm{SO}(8)$ irreps $g = (g_1, g_2, g_3, g_4)$ satisfying:
+    \begin{equation}
+        h_1 \ge g_1 \ge h_2 \ge g_2 \ge h_3 \ge g_3 \ge h_4 \ge |g_4|.
+        \label{eq:so9_to_so8_gt}
+    \end{equation}
+\end{enumerate}
+\paragraph{The Critical Role of Chirality at Level 6:} At Level 6, the $\mathrm{SO}(9)$ 4-form $(1,1,1,1) = \mathbf{126}$ appears in the string spectrum. Under the naive non-chiral lift $(1,1,1,1,0) = \mathbf{210}$, Eq.~\eqref{eq:so10_to_so9_gt} gives $1 \ge h_4 \ge 0$, producing $\mathbf{126}_{\mathrm{SO}(9)} \oplus \mathbf{84}_{\mathrm{SO}(9)}$, where the spurious extra 3-form $\mathbf{84}$ forces a negative multiplicity $-1$ on $\mathbf{120}$. However, lifting to the chiral self-dual 5-form $(1,1,1,1,1) = \mathbf{126}$ gives $|H_5| = 1$, which forces $h_4 = 1$ strictly, branching purely to $\mathbf{126}_{\mathrm{SO}(9)}$ without generating $\mathbf{84}$. This completely eliminates all negative multiplicities.
+
+\section{Methodology and Group Theory Architecture in Code}
+\label{sec:methodology}
+The computation pipeline is implemented in pure standard Python (zero external mathematical dependencies) across a modular set of tools.
+
+\subsection{Statement of the Ab Initio Algorithm}
+\begin{enumerate}
+    \item \textbf{Fock Space Construction:} Construct $\mathcal{F}_l(x)$ by expanding the GS partition function (Eq.~\eqref{eq:partition_fn}) using formal multivariate polynomials on the $\mathrm{SO}(8)$ weight lattice.
+    \item \textbf{Polynomial Character Division:} Divide $\mathcal{F}_l(x)$ by $\chi_{\text{susy}}(x) = \sum_{w \in \mathbf{8}_v} e^{w \cdot x} + \sum_{w \in \mathbf{8}_s} e^{w \cdot x}$ using greedy leading-monomial division in lexicographic weight order, producing the reduced quotient polynomial $Q_l(x)$.
+    \item \textbf{$\mathrm{SO}(8)$ Weyl Character Inversion:} Multiply $Q_l(x)$ by the $D_4$ Weyl denominator $\Delta_{D_4}(x)$ and peel off highest-weight Weyl numerators to extract the exact $\mathrm{SO}(8)$ irreps of $r^{(l)}$.
+    \item \textbf{$\mathrm{SO}(8) \to \mathrm{SO}(9)$ Branching Inversion:} Invert the $B_4 \to D_4$ branching rule to express $r^{(l)}$ as irreducible $\mathrm{SO}(9)$ representations.
+    \item \textbf{$\mathrm{SO}(9) \to \mathrm{SO}(10)$ Linear Integer Programming Lift:} For the cumulative spectrum $R_n = \sum_{l=1}^n r^{(l)}$, solve for the non-negative integer multiplicities $M(H) \ge 0$ under $D_5 \to B_4$ branching allowing full chiral weights $|H_5| \ge 0$.
+\end{enumerate}
+
+\subsection{Uniqueness of Polynomial Division via Integral Domain Property}
+The characters of $\mathrm{SO}(8)$ live in the Laurent polynomial ring $\mathcal{R} = \mathbb{Z}[x_1^{\pm 1}, x_2^{\pm 1}, x_3^{\pm 1}, x_4^{\pm 1}]$. Because the integer ring $\mathbb{Z}$ is an integral domain, $\mathcal{R}$ is also an integral domain with no non-zero zero-divisors.
+If $\mathcal{F}_n = Q_n \chi_{\text{susy}} = Q'_n \chi_{\text{susy}}$, subtracting gives $(Q_n - Q'_n) \chi_{\text{susy}} = 0$. Since $\chi_{\text{susy}} \neq 0$, it follows that $Q_n - Q'_n = 0 \implies Q_n = Q'_n$. Thus, the factorization is strictly unique.
+
+\subsection{Codebase Architecture and Module Reference}
+\begin{itemize}
+    \item \texttt{test\_spectrum.py}: Core algebraic engine containing:
+    \begin{itemize}
+        \item \texttt{compute\_fock\_levels(max\_level)}: Generates the GS Fock space character polynomials $\mathcal{F}_l$.
+        \item \texttt{poly\_div\_susy(P)}: Implements lexicographic multivariate polynomial division by $(\mathbf{8}_v \oplus \mathbf{8}_s)$.
+        \item \texttt{decompose\_so8\_char(Q)}: Inverts the Weyl character formula on $D_4$.
+        \item \texttt{decompose\_so8\_to\_so9(so8\_m)}: Lifts $\mathrm{SO}(8)$ multiplicities to $\mathrm{SO}(9)$.
+        \item \texttt{decompose\_so9\_to\_so10(so9\_m)}: Exact backtracking solver for the $\mathrm{SO}(10)$ lift.
+    \end{itemize}
+    \item \texttt{verify\_factorization.py}: Executes the backward polynomial check $Q_n(x) \times (\mathbf{8}_v + \mathbf{8}_s) \equiv \mathcal{F}_n(x)$, confirming $\max |c_{\text{orig}} - c_{\text{recon}}| = 0$ for all 10 levels.
+    \item \texttt{verify\_so10\_lifting.py}: Performs the exact character-level check by branching the lifted $\mathrm{SO}(10)$ irreps back to $\mathrm{SO}(9)$ and confirming $\Delta m(h) = 0$ for all irreps.
+    \item \texttt{export\_canonical\_dataset.py}: Standalone ab initio runner generating the JSON dataset \texttt{canonical\_spectrum\_levels\_1\_to\_10.json} and verification markdown report.
+    \item \texttt{inspect\_level.py}: Interactive CLI tool to inspect the full physical state accounting, $\mathrm{SO}(8)/\mathrm{SO}(9)$ breakdown, and $\mathrm{SO}(10)$ lift for any level $l \in [1, 10]$.
+\end{itemize}
+
+\subsection{Verification Summary (Levels 1 to 10)}
+\begin{table}[ht!]
+\centering
+\small
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+Level $n$ & $\dim(\mathcal{F}_n)$ & $r_n$ Prefactor & $R_n$ $\mathrm{SO}(9)$ Dim & $R_n$ $\mathrm{SO}(10)$ Dim & $\mathrm{SO}(10)$ Irreps & Result \\
+\midrule
+1 & 16 & 1B + 0F & 1B + 0F & 1B + 0F & 1 & \textbf{PASSED} \\
+2 & 144 & 9B + 0F & 10B + 0F & 10B + 0F & 1 & \textbf{PASSED} \\
+3 & 960 & 44B + 16F & 54B + 16F & 54B + 16F & 2 & \textbf{PASSED} \\
+4 & 5,264 & 201B + 128F & 255B + 144F & 255B + 144F & 3 & \textbf{PASSED} \\
+5 & 25,056 & 846B + 720F & 1,101B + 864F & 1,101B + 864F & 6 & \textbf{PASSED} \\
+6 & 106,944 & 3,468B + 3,216F & 4,569B + 4,080F & 4,569B + 4,080F & 11 & \textbf{PASSED} \\
+7 & 418,176 & 13,240B + 12,896F & 17,809B + 16,976F & 17,809B + 16,976F & 18 & \textbf{PASSED} \\
+8 & 1,520,784 & 47,817B + 47,232F & 65,626B + 64,208F & 65,626B + 64,208F & 29 & \textbf{PASSED} \\
+9 & 5,201,232 & 162,917B + 162,160F & 228,543B + 226,368F & 228,543B + 226,368F & 39 & \textbf{PASSED} \\
+10 & 16,871,648 & 527,806B + 526,672F & 756,349B + 753,040F & 756,349B + 753,040F & 53 & \textbf{PASSED} \\
+\bottomrule
+\end{tabular}
+\caption{Exact dimension matching and $\mathrm{SO}(10)$ lifting verification for Levels 1 through 10.}
+\end{table}
+
+\newpage
+\appendix
+\section{Detailed Level-by-Level Verification Data}
+\label{sec:appendix_data}
+This appendix contains the complete representation-theoretic breakdown for each mass level $n=1,\dots,10$, including single-level prefactors $r_n$, cumulative $\mathrm{SO}(9)$ spectra $R_n = \sum_{l=1}^n r_l$, lifted $\mathrm{SO}(10)$ supermultiplets, and term-by-term branching verification tables.
+
+\subsection{Level $n = 1$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 1 & 1 & 0 \\
+\bottomrule
+\caption{Level 1 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 2$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $1 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{10}$ \texttt{(1, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} None
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 1 & 1 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 1 & 1 & 0 \\
+\bottomrule
+\caption{Level 2 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 3$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $1 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $1 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{54}$ \texttt{(2, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 1 & 1 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 1 & 1 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 1 & 1 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 1 & 1 & 0 \\
+\bottomrule
+\caption{Level 3 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 4$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $1 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $2 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $1 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $1 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{45}$ \texttt{(1, 1, 0, 0, 0)}, $1 \times \mathbf{210}$ \texttt{(3, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 1 & 1 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 1 & 1 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 1 & 1 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 2 & 2 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 1 & 1 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 1 & 1 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 1 & 1 & 0 \\
+\bottomrule
+\caption{Level 4 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 5$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $1 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $1 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $1 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $2 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $2 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $2 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $1 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $2 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $1 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $1 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}
+    \item \textbf{Fermions:} $2 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0, 0)}, $1 \times \mathbf{120}$ \texttt{(1, 1, 1, 0, 0)}, $1 \times \mathbf{320}$ \texttt{(2, 1, 0, 0, 0)}, $1 \times \mathbf{660}$ \texttt{(4, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 1 & 1 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 1 & 1 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 1 & 1 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 1 & 1 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 2 & 2 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 2 & 2 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 2 & 2 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 2 & 2 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 1 & 1 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 2 & 2 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 2 & 2 & 0 \\
+\bottomrule
+\caption{Level 5 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 6$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $1 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $1 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $2 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $1 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $1 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $2 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $2 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $4 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $3 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $2 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $3 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $1 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $3 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $1 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $1 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $1 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $1 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}
+    \item \textbf{Fermions:} $4 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{10}$ \texttt{(1, 0, 0, 0, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1, 1)}, $1 \times \mathbf{320}$ \texttt{(2, 1, 0, 0, 0)}, $1 \times \mathbf{945}$ \texttt{(2, 1, 1, 0, 0)}, $1 \times \mathbf{1386}$ \texttt{(3, 1, 0, 0, 0)}, $1 \times \mathbf{1782}$ \texttt{(5, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{560}$ \texttt{(1.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{2640}$ \texttt{(3.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(5, 0, 0, 0)} & \textbf{1122} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 0, 0)} & \textbf{910} & 1 & 1 & 0 \\
+B & \texttt{(2, 1, 1, 0)} & \textbf{594} & 1 & 1 & 0 \\
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 1 & 1 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 3 & 3 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 2 & 2 & 0 \\
+B & \texttt{(1, 1, 1, 1)} & \textbf{126} & 1 & 1 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 1 & 1 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 3 & 3 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 3 & 3 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 4 & 4 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 2 & 2 & 0 \\
+F & \texttt{(3.5, 0.5, 0.5, 0.5)} & \textbf{1920} & 1 & 1 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 2 & 2 & 0 \\
+F & \texttt{(1.5, 1.5, 0.5, 0.5)} & \textbf{432} & 1 & 1 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 4 & 4 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 4 & 4 & 0 \\
+\bottomrule
+\caption{Level 6 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 7$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $1 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $1 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $2 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $1 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $1 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $1 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $2 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $3 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $3 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $2 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $2 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $2 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $3 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $4 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $4 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $6 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $6 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $3 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $5 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $2 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $5 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $4 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $1 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $3 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $2 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $2 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $1 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $1 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $1 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $1 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $1 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}
+    \item \textbf{Fermions:} $6 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $8 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{10}$ \texttt{(1, 0, 0, 0, 0)}, $1 \times \mathbf{120}$ \texttt{(1, 1, 1, 0, 0)}, $1 \times \mathbf{210}$ \texttt{(1, 1, 1, 1, 0)}, $2 \times \mathbf{54}$ \texttt{(2, 0, 0, 0, 0)}, $1 \times \mathbf{945}$ \texttt{(2, 1, 1, 0, 0)}, $1 \times \mathbf{1050}$ \texttt{(2, 1, 1, 1, 1)}, $1 \times \mathbf{770}$ \texttt{(2, 2, 0, 0, 0)}, $1 \times \mathbf{1386}$ \texttt{(3, 1, 0, 0, 0)}, $1 \times \mathbf{4312}$ \texttt{(3, 1, 1, 0, 0)}, $1 \times \mathbf{4608}$ \texttt{(4, 1, 0, 0, 0)}, $1 \times \mathbf{4290}$ \texttt{(6, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{560}$ \texttt{(1.5, 1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{3696}$ \texttt{(2.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{2640}$ \texttt{(3.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{7920}$ \texttt{(4.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(4, 1, 0, 0)} & \textbf{2772} & 1 & 1 & 0 \\
+B & \texttt{(6, 0, 0, 0)} & \textbf{2508} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 1, 0)} & \textbf{2457} & 1 & 1 & 0 \\
+B & \texttt{(5, 0, 0, 0)} & \textbf{1122} & 1 & 1 & 0 \\
+B & \texttt{(2, 1, 1, 1)} & \textbf{924} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 0, 0)} & \textbf{910} & 3 & 3 & 0 \\
+B & \texttt{(2, 1, 1, 0)} & \textbf{594} & 2 & 2 & 0 \\
+B & \texttt{(2, 2, 0, 0)} & \textbf{495} & 1 & 1 & 0 \\
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 2 & 2 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 5 & 5 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 3 & 3 & 0 \\
+B & \texttt{(1, 1, 1, 1)} & \textbf{126} & 2 & 2 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 4 & 4 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 6 & 6 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 5 & 5 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 6 & 6 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 4 & 4 & 0 \\
+F & \texttt{(4.5, 0.5, 0.5, 0.5)} & \textbf{5280} & 1 & 1 & 0 \\
+F & \texttt{(2.5, 1.5, 0.5, 0.5)} & \textbf{2560} & 1 & 1 & 0 \\
+F & \texttt{(3.5, 0.5, 0.5, 0.5)} & \textbf{1920} & 2 & 2 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 5 & 5 & 0 \\
+F & \texttt{(1.5, 1.5, 0.5, 0.5)} & \textbf{432} & 3 & 3 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 8 & 8 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 6 & 6 & 0 \\
+\bottomrule
+\caption{Level 7 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 8$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{5148}$ \texttt{(7, 0, 0, 0)}, $1 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $1 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $1 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $2 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $1 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $1 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $1 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $3 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $4 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}, $1 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $2 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $4 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $5 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $3 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $3 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $2 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $5 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $5 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $1 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $3 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $5 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}, $4 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $7 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $5 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $11 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $9 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $7 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $10 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $3 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $10 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $6 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $2 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $6 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $6 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $5 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $1 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $3 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $2 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $2 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $3 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $1 \times \mathbf{5148}$ \texttt{(7, 0, 0, 0)}, $1 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $1 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $1 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $1 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $1 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}
+    \item \textbf{Fermions:} $10 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $15 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $10 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $7 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{10}$ \texttt{(1, 0, 0, 0, 0)}, $2 \times \mathbf{45}$ \texttt{(1, 1, 0, 0, 0)}, $1 \times \mathbf{210}$ \texttt{(1, 1, 1, 1, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1, 1)}, $1 \times \mathbf{54}$ \texttt{(2, 0, 0, 0, 0)}, $1 \times \mathbf{320}$ \texttt{(2, 1, 0, 0, 0)}, $2 \times \mathbf{945}$ \texttt{(2, 1, 1, 0, 0)}, $1 \times \mathbf{1728}$ \texttt{(2, 1, 1, 1, 0)}, $1 \times \mathbf{1050}$ \texttt{(2, 1, 1, 1, 1)}, $1 \times \mathbf{2970}$ \texttt{(2, 2, 1, 0, 0)}, $2 \times \mathbf{210}$ \texttt{(3, 0, 0, 0, 0)}, $1 \times \mathbf{1386}$ \texttt{(3, 1, 0, 0, 0)}, $1 \times \mathbf{4312}$ \texttt{(3, 1, 1, 0, 0)}, $1 \times \mathbf{4950}$ \texttt{(3, 1, 1, 1, 1)}, $1 \times \mathbf{4410}$ \texttt{(3, 2, 0, 0, 0)}, $1 \times \mathbf{4608}$ \texttt{(4, 1, 0, 0, 0)}, $1 \times \mathbf{14784}$ \texttt{(4, 1, 1, 0, 0)}, $1 \times \mathbf{12870}$ \texttt{(5, 1, 0, 0, 0)}, $1 \times \mathbf{9438}$ \texttt{(7, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{560}$ \texttt{(1.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{1200}$ \texttt{(1.5, 1.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{3696}$ \texttt{(2.5, 1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{2640}$ \texttt{(3.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{15120}$ \texttt{(3.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{7920}$ \texttt{(4.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{20592}$ \texttt{(5.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(4, 1, 1, 0)} & \textbf{7700} & 1 & 1 & 0 \\
+B & \texttt{(5, 1, 0, 0)} & \textbf{7140} & 1 & 1 & 0 \\
+B & \texttt{(7, 0, 0, 0)} & \textbf{5148} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 1, 1)} & \textbf{3900} & 1 & 1 & 0 \\
+B & \texttt{(4, 1, 0, 0)} & \textbf{2772} & 3 & 3 & 0 \\
+B & \texttt{(3, 2, 0, 0)} & \textbf{2574} & 1 & 1 & 0 \\
+B & \texttt{(6, 0, 0, 0)} & \textbf{2508} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 1, 0)} & \textbf{2457} & 2 & 2 & 0 \\
+B & \texttt{(2, 2, 1, 0)} & \textbf{1650} & 1 & 1 & 0 \\
+B & \texttt{(5, 0, 0, 0)} & \textbf{1122} & 2 & 2 & 0 \\
+B & \texttt{(2, 1, 1, 1)} & \textbf{924} & 3 & 3 & 0 \\
+B & \texttt{(3, 1, 0, 0)} & \textbf{910} & 6 & 6 & 0 \\
+B & \texttt{(2, 1, 1, 0)} & \textbf{594} & 6 & 6 & 0 \\
+B & \texttt{(2, 2, 0, 0)} & \textbf{495} & 2 & 2 & 0 \\
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 3 & 3 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 10 & 10 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 7 & 7 & 0 \\
+B & \texttt{(1, 1, 1, 1)} & \textbf{126} & 5 & 5 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 6 & 6 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 9 & 9 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 10 & 10 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 11 & 11 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 5 & 5 & 0 \\
+F & \texttt{(5.5, 0.5, 0.5, 0.5)} & \textbf{12672} & 1 & 1 & 0 \\
+F & \texttt{(3.5, 1.5, 0.5, 0.5)} & \textbf{9504} & 1 & 1 & 0 \\
+F & \texttt{(4.5, 0.5, 0.5, 0.5)} & \textbf{5280} & 2 & 2 & 0 \\
+F & \texttt{(2.5, 1.5, 0.5, 0.5)} & \textbf{2560} & 4 & 4 & 0 \\
+F & \texttt{(3.5, 0.5, 0.5, 0.5)} & \textbf{1920} & 5 & 5 & 0 \\
+F & \texttt{(1.5, 1.5, 1.5, 0.5)} & \textbf{768} & 1 & 1 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 10 & 10 & 0 \\
+F & \texttt{(1.5, 1.5, 0.5, 0.5)} & \textbf{432} & 7 & 7 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 15 & 15 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 10 & 10 & 0 \\
+\bottomrule
+\caption{Level 8 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 9$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{9867}$ \texttt{(8, 0, 0, 0)}, $1 \times \mathbf{16302}$ \texttt{(6, 1, 0, 0)}, $1 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $1 \times \mathbf{20196}$ \texttt{(5, 1, 1, 0)}, $2 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $1 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $1 \times \mathbf{8748}$ \texttt{(4, 2, 0, 0)}, $1 \times \mathbf{12375}$ \texttt{(4, 1, 1, 1)}, $1 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $3 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $4 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{9009}$ \texttt{(3, 2, 1, 0)}, $2 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $2 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $5 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $6 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $4 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $1 \times \mathbf{2772}$ \texttt{(2, 2, 1, 1)}, $1 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}, $4 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $6 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $6 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $9 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $9 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $4 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $7 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $7 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $5 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $3 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{27456}$ \texttt{(6.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{27648}$ \texttt{(4.5, 1.5, 0.5, 0.5)}, $3 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $6 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{4928}$ \texttt{(2.5, 2.5, 0.5, 0.5)}, $1 \times \mathbf{5040}$ \texttt{(2.5, 1.5, 1.5, 0.5)}, $6 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $10 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}, $8 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $12 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $8 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $8 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $16 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $18 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $11 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $17 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $7 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $19 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $13 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $3 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $12 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $12 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $9 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $2 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $6 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $7 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $6 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $9 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $1 \times \mathbf{5148}$ \texttt{(7, 0, 0, 0)}, $3 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $2 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $3 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $3 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $2 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}, $1 \times \mathbf{9867}$ \texttt{(8, 0, 0, 0)}, $1 \times \mathbf{16302}$ \texttt{(6, 1, 0, 0)}, $1 \times \mathbf{20196}$ \texttt{(5, 1, 1, 0)}, $1 \times \mathbf{8748}$ \texttt{(4, 2, 0, 0)}, $1 \times \mathbf{12375}$ \texttt{(4, 1, 1, 1)}, $1 \times \mathbf{9009}$ \texttt{(3, 2, 1, 0)}, $1 \times \mathbf{2772}$ \texttt{(2, 2, 1, 1)}
+    \item \textbf{Fermions:} $18 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $27 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $20 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $11 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $15 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $5 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $10 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $4 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}, $1 \times \mathbf{27456}$ \texttt{(6.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{27648}$ \texttt{(4.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{4928}$ \texttt{(2.5, 2.5, 0.5, 0.5)}, $1 \times \mathbf{5040}$ \texttt{(2.5, 1.5, 1.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $2 \times \mathbf{45}$ \texttt{(1, 1, 0, 0, 0)}, $2 \times \mathbf{120}$ \texttt{(1, 1, 1, 0, 0)}, $1 \times \mathbf{210}$ \texttt{(1, 1, 1, 1, 0)}, $2 \times \mathbf{54}$ \texttt{(2, 0, 0, 0, 0)}, $3 \times \mathbf{320}$ \texttt{(2, 1, 0, 0, 0)}, $1 \times \mathbf{945}$ \texttt{(2, 1, 1, 0, 0)}, $3 \times \mathbf{1728}$ \texttt{(2, 1, 1, 1, 0)}, $2 \times \mathbf{1050}$ \texttt{(2, 1, 1, 1, 1)}, $2 \times \mathbf{770}$ \texttt{(2, 2, 0, 0, 0)}, $1 \times \mathbf{2970}$ \texttt{(2, 2, 1, 0, 0)}, $1 \times \mathbf{3696}$ \texttt{(2, 2, 1, 1, 1)}, $3 \times \mathbf{210}$ \texttt{(3, 0, 0, 0, 0)}, $4 \times \mathbf{4312}$ \texttt{(3, 1, 1, 0, 0)}, $2 \times \mathbf{4950}$ \texttt{(3, 1, 1, 1, 1)}, $1 \times \mathbf{4410}$ \texttt{(3, 2, 0, 0, 0)}, $1 \times \mathbf{17920}$ \texttt{(3, 2, 1, 0, 0)}, $2 \times \mathbf{660}$ \texttt{(4, 0, 0, 0, 0)}, $1 \times \mathbf{4608}$ \texttt{(4, 1, 0, 0, 0)}, $1 \times \mathbf{14784}$ \texttt{(4, 1, 1, 0, 0)}, $1 \times \mathbf{17325}$ \texttt{(4, 1, 1, 1, 1)}, $1 \times \mathbf{16380}$ \texttt{(4, 2, 0, 0, 0)}, $1 \times \mathbf{12870}$ \texttt{(5, 1, 0, 0, 0)}, $1 \times \mathbf{42120}$ \texttt{(5, 1, 1, 0, 0)}, $1 \times \mathbf{31680}$ \texttt{(6, 1, 0, 0, 0)}, $1 \times \mathbf{19305}$ \texttt{(8, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $2 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{560}$ \texttt{(1.5, 1.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{1200}$ \texttt{(1.5, 1.5, 1.5, 0.5, 0.5)}, $4 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{3696}$ \texttt{(2.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{8800}$ \texttt{(2.5, 1.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{8064}$ \texttt{(2.5, 2.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{2640}$ \texttt{(3.5, 0.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{15120}$ \texttt{(3.5, 1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{7920}$ \texttt{(4.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{48048}$ \texttt{(4.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{20592}$ \texttt{(5.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{48048}$ \texttt{(6.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(5, 1, 1, 0)} & \textbf{20196} & 1 & 1 & 0 \\
+B & \texttt{(6, 1, 0, 0)} & \textbf{16302} & 1 & 1 & 0 \\
+B & \texttt{(4, 1, 1, 1)} & \textbf{12375} & 1 & 1 & 0 \\
+B & \texttt{(8, 0, 0, 0)} & \textbf{9867} & 1 & 1 & 0 \\
+B & \texttt{(3, 2, 1, 0)} & \textbf{9009} & 1 & 1 & 0 \\
+B & \texttt{(4, 2, 0, 0)} & \textbf{8748} & 1 & 1 & 0 \\
+B & \texttt{(4, 1, 1, 0)} & \textbf{7700} & 2 & 2 & 0 \\
+B & \texttt{(5, 1, 0, 0)} & \textbf{7140} & 3 & 3 & 0 \\
+B & \texttt{(7, 0, 0, 0)} & \textbf{5148} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 1, 1)} & \textbf{3900} & 3 & 3 & 0 \\
+B & \texttt{(4, 1, 0, 0)} & \textbf{2772} & 6 & 6 & 0 \\
+B & \texttt{(2, 2, 1, 1)} & \textbf{2772} & 1 & 1 & 0 \\
+B & \texttt{(3, 2, 0, 0)} & \textbf{2574} & 3 & 3 & 0 \\
+B & \texttt{(6, 0, 0, 0)} & \textbf{2508} & 2 & 2 & 0 \\
+B & \texttt{(3, 1, 1, 0)} & \textbf{2457} & 7 & 7 & 0 \\
+B & \texttt{(2, 2, 1, 0)} & \textbf{1650} & 2 & 2 & 0 \\
+B & \texttt{(5, 0, 0, 0)} & \textbf{1122} & 3 & 3 & 0 \\
+B & \texttt{(2, 1, 1, 1)} & \textbf{924} & 9 & 9 & 0 \\
+B & \texttt{(3, 1, 0, 0)} & \textbf{910} & 12 & 12 & 0 \\
+B & \texttt{(2, 1, 1, 0)} & \textbf{594} & 12 & 12 & 0 \\
+B & \texttt{(2, 2, 0, 0)} & \textbf{495} & 6 & 6 & 0 \\
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 7 & 7 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 19 & 19 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 11 & 11 & 0 \\
+B & \texttt{(1, 1, 1, 1)} & \textbf{126} & 9 & 9 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 13 & 13 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 18 & 18 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 17 & 17 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 16 & 16 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 8 & 8 & 0 \\
+F & \texttt{(4.5, 1.5, 0.5, 0.5)} & \textbf{27648} & 1 & 1 & 0 \\
+F & \texttt{(6.5, 0.5, 0.5, 0.5)} & \textbf{27456} & 1 & 1 & 0 \\
+F & \texttt{(5.5, 0.5, 0.5, 0.5)} & \textbf{12672} & 2 & 2 & 0 \\
+F & \texttt{(3.5, 1.5, 0.5, 0.5)} & \textbf{9504} & 4 & 4 & 0 \\
+F & \texttt{(4.5, 0.5, 0.5, 0.5)} & \textbf{5280} & 5 & 5 & 0 \\
+F & \texttt{(2.5, 1.5, 1.5, 0.5)} & \textbf{5040} & 1 & 1 & 0 \\
+F & \texttt{(2.5, 2.5, 0.5, 0.5)} & \textbf{4928} & 1 & 1 & 0 \\
+F & \texttt{(2.5, 1.5, 0.5, 0.5)} & \textbf{2560} & 10 & 10 & 0 \\
+F & \texttt{(3.5, 0.5, 0.5, 0.5)} & \textbf{1920} & 11 & 11 & 0 \\
+F & \texttt{(1.5, 1.5, 1.5, 0.5)} & \textbf{768} & 4 & 4 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 20 & 20 & 0 \\
+F & \texttt{(1.5, 1.5, 0.5, 0.5)} & \textbf{432} & 15 & 15 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 27 & 27 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 18 & 18 & 0 \\
+\bottomrule
+\caption{Level 9 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\subsection{Level $n = 10$ Representation Data}
+\paragraph{Single-Level Prefactor $r_n$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $1 \times \mathbf{17875}$ \texttt{(9, 0, 0, 0)}, $1 \times \mathbf{33957}$ \texttt{(7, 1, 0, 0)}, $1 \times \mathbf{5148}$ \texttt{(7, 0, 0, 0)}, $1 \times \mathbf{46683}$ \texttt{(6, 1, 1, 0)}, $2 \times \mathbf{16302}$ \texttt{(6, 1, 0, 0)}, $1 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $1 \times \mathbf{23868}$ \texttt{(5, 2, 0, 0)}, $1 \times \mathbf{32725}$ \texttt{(5, 1, 1, 1)}, $1 \times \mathbf{20196}$ \texttt{(5, 1, 1, 0)}, $3 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $4 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $1 \times \mathbf{31500}$ \texttt{(4, 2, 1, 0)}, $2 \times \mathbf{8748}$ \texttt{(4, 2, 0, 0)}, $2 \times \mathbf{12375}$ \texttt{(4, 1, 1, 1)}, $5 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $7 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $5 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $1 \times \mathbf{4004}$ \texttt{(3, 3, 0, 0)}, $1 \times \mathbf{15444}$ \texttt{(3, 2, 1, 1)}, $2 \times \mathbf{9009}$ \texttt{(3, 2, 1, 0)}, $5 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $7 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $7 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $12 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $11 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $3 \times \mathbf{2772}$ \texttt{(2, 2, 1, 1)}, $6 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}, $5 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $9 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $15 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $17 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $10 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $10 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $10 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $13 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $12 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $3 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}
+    \item \textbf{Fermions:} $1 \times \mathbf{54912}$ \texttt{(7.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{27456}$ \texttt{(6.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{68640}$ \texttt{(5.5, 1.5, 0.5, 0.5)}, $3 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{27648}$ \texttt{(4.5, 1.5, 0.5, 0.5)}, $6 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{24192}$ \texttt{(3.5, 2.5, 0.5, 0.5)}, $1 \times \mathbf{19712}$ \texttt{(3.5, 1.5, 1.5, 0.5)}, $7 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $11 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{4928}$ \texttt{(2.5, 2.5, 0.5, 0.5)}, $4 \times \mathbf{5040}$ \texttt{(2.5, 1.5, 1.5, 0.5)}, $14 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $19 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{672}$ \texttt{(1.5, 1.5, 1.5, 1.5)}, $5 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}, $15 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $22 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $12 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{Cumulative Spectrum $R_n = \sum_{l=1}^n r_l$ (in $\mathrm{SO}(9)$):}
+\begin{itemize}
+    \item \textbf{Bosons:} $11 \times \mathbf{1}$ \texttt{(0, 0, 0, 0)}, $28 \times \mathbf{9}$ \texttt{(1, 0, 0, 0)}, $28 \times \mathbf{44}$ \texttt{(2, 0, 0, 0)}, $22 \times \mathbf{156}$ \texttt{(3, 0, 0, 0)}, $30 \times \mathbf{36}$ \texttt{(1, 1, 0, 0)}, $12 \times \mathbf{450}$ \texttt{(4, 0, 0, 0)}, $36 \times \mathbf{231}$ \texttt{(2, 1, 0, 0)}, $23 \times \mathbf{84}$ \texttt{(1, 1, 1, 0)}, $7 \times \mathbf{1122}$ \texttt{(5, 0, 0, 0)}, $24 \times \mathbf{910}$ \texttt{(3, 1, 0, 0)}, $27 \times \mathbf{594}$ \texttt{(2, 1, 1, 0)}, $19 \times \mathbf{126}$ \texttt{(1, 1, 1, 1)}, $3 \times \mathbf{2508}$ \texttt{(6, 0, 0, 0)}, $13 \times \mathbf{2772}$ \texttt{(4, 1, 0, 0)}, $14 \times \mathbf{2457}$ \texttt{(3, 1, 1, 0)}, $11 \times \mathbf{495}$ \texttt{(2, 2, 0, 0)}, $18 \times \mathbf{924}$ \texttt{(2, 1, 1, 1)}, $2 \times \mathbf{5148}$ \texttt{(7, 0, 0, 0)}, $6 \times \mathbf{7140}$ \texttt{(5, 1, 0, 0)}, $7 \times \mathbf{7700}$ \texttt{(4, 1, 1, 0)}, $8 \times \mathbf{2574}$ \texttt{(3, 2, 0, 0)}, $10 \times \mathbf{3900}$ \texttt{(3, 1, 1, 1)}, $8 \times \mathbf{1650}$ \texttt{(2, 2, 1, 0)}, $1 \times \mathbf{9867}$ \texttt{(8, 0, 0, 0)}, $3 \times \mathbf{16302}$ \texttt{(6, 1, 0, 0)}, $2 \times \mathbf{20196}$ \texttt{(5, 1, 1, 0)}, $3 \times \mathbf{8748}$ \texttt{(4, 2, 0, 0)}, $3 \times \mathbf{12375}$ \texttt{(4, 1, 1, 1)}, $3 \times \mathbf{9009}$ \texttt{(3, 2, 1, 0)}, $4 \times \mathbf{2772}$ \texttt{(2, 2, 1, 1)}, $1 \times \mathbf{17875}$ \texttt{(9, 0, 0, 0)}, $1 \times \mathbf{33957}$ \texttt{(7, 1, 0, 0)}, $1 \times \mathbf{46683}$ \texttt{(6, 1, 1, 0)}, $1 \times \mathbf{23868}$ \texttt{(5, 2, 0, 0)}, $1 \times \mathbf{32725}$ \texttt{(5, 1, 1, 1)}, $1 \times \mathbf{31500}$ \texttt{(4, 2, 1, 0)}, $1 \times \mathbf{4004}$ \texttt{(3, 3, 0, 0)}, $1 \times \mathbf{15444}$ \texttt{(3, 2, 1, 1)}
+    \item \textbf{Fermions:} $30 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5)}, $49 \times \mathbf{128}$ \texttt{(1.5, 0.5, 0.5, 0.5)}, $39 \times \mathbf{576}$ \texttt{(2.5, 0.5, 0.5, 0.5)}, $22 \times \mathbf{1920}$ \texttt{(3.5, 0.5, 0.5, 0.5)}, $30 \times \mathbf{432}$ \texttt{(1.5, 1.5, 0.5, 0.5)}, $11 \times \mathbf{5280}$ \texttt{(4.5, 0.5, 0.5, 0.5)}, $24 \times \mathbf{2560}$ \texttt{(2.5, 1.5, 0.5, 0.5)}, $5 \times \mathbf{12672}$ \texttt{(5.5, 0.5, 0.5, 0.5)}, $11 \times \mathbf{9504}$ \texttt{(3.5, 1.5, 0.5, 0.5)}, $9 \times \mathbf{768}$ \texttt{(1.5, 1.5, 1.5, 0.5)}, $2 \times \mathbf{27456}$ \texttt{(6.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{27648}$ \texttt{(4.5, 1.5, 0.5, 0.5)}, $3 \times \mathbf{4928}$ \texttt{(2.5, 2.5, 0.5, 0.5)}, $5 \times \mathbf{5040}$ \texttt{(2.5, 1.5, 1.5, 0.5)}, $1 \times \mathbf{54912}$ \texttt{(7.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{68640}$ \texttt{(5.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{24192}$ \texttt{(3.5, 2.5, 0.5, 0.5)}, $1 \times \mathbf{19712}$ \texttt{(3.5, 1.5, 1.5, 0.5)}, $2 \times \mathbf{672}$ \texttt{(1.5, 1.5, 1.5, 1.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(10)$ Supermultiplet Decomposition:}
+\begin{itemize}
+    \item \textbf{Bosons:} $5 \times \mathbf{45}$ \texttt{(1, 1, 0, 0, 0)}, $4 \times \mathbf{210}$ \texttt{(1, 1, 1, 1, 0)}, $1 \times \mathbf{126}$ \texttt{(1, 1, 1, 1, 1)}, $6 \times \mathbf{320}$ \texttt{(2, 1, 0, 0, 0)}, $3 \times \mathbf{945}$ \texttt{(2, 1, 1, 0, 0)}, $5 \times \mathbf{1728}$ \texttt{(2, 1, 1, 1, 0)}, $1 \times \mathbf{770}$ \texttt{(2, 2, 0, 0, 0)}, $3 \times \mathbf{2970}$ \texttt{(2, 2, 1, 0, 0)}, $2 \times \mathbf{5940}$ \texttt{(2, 2, 1, 1, 0)}, $1 \times \mathbf{3696}$ \texttt{(2, 2, 1, 1, 1)}, $5 \times \mathbf{210}$ \texttt{(3, 0, 0, 0, 0)}, $2 \times \mathbf{1386}$ \texttt{(3, 1, 0, 0, 0)}, $4 \times \mathbf{4312}$ \texttt{(3, 1, 1, 0, 0)}, $1 \times \mathbf{8085}$ \texttt{(3, 1, 1, 1, 0)}, $5 \times \mathbf{4950}$ \texttt{(3, 1, 1, 1, 1)}, $2 \times \mathbf{4410}$ \texttt{(3, 2, 0, 0, 0)}, $2 \times \mathbf{17920}$ \texttt{(3, 2, 1, 0, 0)}, $1 \times \mathbf{23040}$ \texttt{(3, 2, 1, 1, 1)}, $1 \times \mathbf{7644}$ \texttt{(3, 3, 0, 0, 0)}, $3 \times \mathbf{660}$ \texttt{(4, 0, 0, 0, 0)}, $1 \times \mathbf{4608}$ \texttt{(4, 1, 0, 0, 0)}, $4 \times \mathbf{14784}$ \texttt{(4, 1, 1, 0, 0)}, $2 \times \mathbf{17325}$ \texttt{(4, 1, 1, 1, 1)}, $1 \times \mathbf{16380}$ \texttt{(4, 2, 0, 0, 0)}, $1 \times \mathbf{68640}$ \texttt{(4, 2, 1, 0, 0)}, $2 \times \mathbf{1782}$ \texttt{(5, 0, 0, 0, 0)}, $1 \times \mathbf{12870}$ \texttt{(5, 1, 0, 0, 0)}, $1 \times \mathbf{42120}$ \texttt{(5, 1, 1, 0, 0)}, $1 \times \mathbf{50050}$ \texttt{(5, 1, 1, 1, 1)}, $1 \times \mathbf{48510}$ \texttt{(5, 2, 0, 0, 0)}, $1 \times \mathbf{31680}$ \texttt{(6, 1, 0, 0, 0)}, $1 \times \mathbf{105105}$ \texttt{(6, 1, 1, 0, 0)}, $1 \times \mathbf{70785}$ \texttt{(7, 1, 0, 0, 0)}, $1 \times \mathbf{37180}$ \texttt{(9, 0, 0, 0, 0)}
+    \item \textbf{Fermions:} $2 \times \mathbf{16}$ \texttt{(0.5, 0.5, 0.5, 0.5, 0.5)}, $8 \times \mathbf{144}$ \texttt{(1.5, 0.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{560}$ \texttt{(1.5, 1.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{1200}$ \texttt{(1.5, 1.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{672}$ \texttt{(1.5, 1.5, 1.5, 1.5, 1.5)}, $8 \times \mathbf{720}$ \texttt{(2.5, 0.5, 0.5, 0.5, 0.5)}, $7 \times \mathbf{3696}$ \texttt{(2.5, 1.5, 0.5, 0.5, 0.5)}, $4 \times \mathbf{8800}$ \texttt{(2.5, 1.5, 1.5, 0.5, 0.5)}, $2 \times \mathbf{8064}$ \texttt{(2.5, 2.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{2640}$ \texttt{(3.5, 0.5, 0.5, 0.5, 0.5)}, $5 \times \mathbf{15120}$ \texttt{(3.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{38016}$ \texttt{(3.5, 1.5, 1.5, 0.5, 0.5)}, $1 \times \mathbf{43680}$ \texttt{(3.5, 2.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{7920}$ \texttt{(4.5, 0.5, 0.5, 0.5, 0.5)}, $3 \times \mathbf{48048}$ \texttt{(4.5, 1.5, 0.5, 0.5, 0.5)}, $2 \times \mathbf{20592}$ \texttt{(5.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{129360}$ \texttt{(5.5, 1.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{48048}$ \texttt{(6.5, 0.5, 0.5, 0.5, 0.5)}, $1 \times \mathbf{102960}$ \texttt{(7.5, 0.5, 0.5, 0.5, 0.5)}
+\end{itemize}
+\paragraph{$\mathrm{SO}(9)$ Term-by-Term Branching Reconstruction Verification:}
+\begin{longtable}{@{}cccccc@{}}
+\toprule
+Type & $\mathrm{SO}(9)$ Weight & Dim & Target Mult ($R_n$) & Recon Mult (from $\mathrm{SO}(10)$) & Difference \\
+\midrule
+\endhead
+B & \texttt{(6, 1, 1, 0)} & \textbf{46683} & 1 & 1 & 0 \\
+B & \texttt{(7, 1, 0, 0)} & \textbf{33957} & 1 & 1 & 0 \\
+B & \texttt{(5, 1, 1, 1)} & \textbf{32725} & 1 & 1 & 0 \\
+B & \texttt{(4, 2, 1, 0)} & \textbf{31500} & 1 & 1 & 0 \\
+B & \texttt{(5, 2, 0, 0)} & \textbf{23868} & 1 & 1 & 0 \\
+B & \texttt{(5, 1, 1, 0)} & \textbf{20196} & 2 & 2 & 0 \\
+B & \texttt{(9, 0, 0, 0)} & \textbf{17875} & 1 & 1 & 0 \\
+B & \texttt{(6, 1, 0, 0)} & \textbf{16302} & 3 & 3 & 0 \\
+B & \texttt{(3, 2, 1, 1)} & \textbf{15444} & 1 & 1 & 0 \\
+B & \texttt{(4, 1, 1, 1)} & \textbf{12375} & 3 & 3 & 0 \\
+B & \texttt{(8, 0, 0, 0)} & \textbf{9867} & 1 & 1 & 0 \\
+B & \texttt{(3, 2, 1, 0)} & \textbf{9009} & 3 & 3 & 0 \\
+B & \texttt{(4, 2, 0, 0)} & \textbf{8748} & 3 & 3 & 0 \\
+B & \texttt{(4, 1, 1, 0)} & \textbf{7700} & 7 & 7 & 0 \\
+B & \texttt{(5, 1, 0, 0)} & \textbf{7140} & 6 & 6 & 0 \\
+B & \texttt{(7, 0, 0, 0)} & \textbf{5148} & 2 & 2 & 0 \\
+B & \texttt{(3, 3, 0, 0)} & \textbf{4004} & 1 & 1 & 0 \\
+B & \texttt{(3, 1, 1, 1)} & \textbf{3900} & 10 & 10 & 0 \\
+B & \texttt{(4, 1, 0, 0)} & \textbf{2772} & 13 & 13 & 0 \\
+B & \texttt{(2, 2, 1, 1)} & \textbf{2772} & 4 & 4 & 0 \\
+B & \texttt{(3, 2, 0, 0)} & \textbf{2574} & 8 & 8 & 0 \\
+B & \texttt{(6, 0, 0, 0)} & \textbf{2508} & 3 & 3 & 0 \\
+B & \texttt{(3, 1, 1, 0)} & \textbf{2457} & 14 & 14 & 0 \\
+B & \texttt{(2, 2, 1, 0)} & \textbf{1650} & 8 & 8 & 0 \\
+B & \texttt{(5, 0, 0, 0)} & \textbf{1122} & 7 & 7 & 0 \\
+B & \texttt{(2, 1, 1, 1)} & \textbf{924} & 18 & 18 & 0 \\
+B & \texttt{(3, 1, 0, 0)} & \textbf{910} & 24 & 24 & 0 \\
+B & \texttt{(2, 1, 1, 0)} & \textbf{594} & 27 & 27 & 0 \\
+B & \texttt{(2, 2, 0, 0)} & \textbf{495} & 11 & 11 & 0 \\
+B & \texttt{(4, 0, 0, 0)} & \textbf{450} & 12 & 12 & 0 \\
+B & \texttt{(2, 1, 0, 0)} & \textbf{231} & 36 & 36 & 0 \\
+B & \texttt{(3, 0, 0, 0)} & \textbf{156} & 22 & 22 & 0 \\
+B & \texttt{(1, 1, 1, 1)} & \textbf{126} & 19 & 19 & 0 \\
+B & \texttt{(1, 1, 1, 0)} & \textbf{84} & 23 & 23 & 0 \\
+B & \texttt{(2, 0, 0, 0)} & \textbf{44} & 28 & 28 & 0 \\
+B & \texttt{(1, 1, 0, 0)} & \textbf{36} & 30 & 30 & 0 \\
+B & \texttt{(1, 0, 0, 0)} & \textbf{9} & 28 & 28 & 0 \\
+B & \texttt{(0, 0, 0, 0)} & \textbf{1} & 11 & 11 & 0 \\
+F & \texttt{(5.5, 1.5, 0.5, 0.5)} & \textbf{68640} & 1 & 1 & 0 \\
+F & \texttt{(7.5, 0.5, 0.5, 0.5)} & \textbf{54912} & 1 & 1 & 0 \\
+F & \texttt{(4.5, 1.5, 0.5, 0.5)} & \textbf{27648} & 4 & 4 & 0 \\
+F & \texttt{(6.5, 0.5, 0.5, 0.5)} & \textbf{27456} & 2 & 2 & 0 \\
+F & \texttt{(3.5, 2.5, 0.5, 0.5)} & \textbf{24192} & 1 & 1 & 0 \\
+F & \texttt{(3.5, 1.5, 1.5, 0.5)} & \textbf{19712} & 1 & 1 & 0 \\
+F & \texttt{(5.5, 0.5, 0.5, 0.5)} & \textbf{12672} & 5 & 5 & 0 \\
+F & \texttt{(3.5, 1.5, 0.5, 0.5)} & \textbf{9504} & 11 & 11 & 0 \\
+F & \texttt{(4.5, 0.5, 0.5, 0.5)} & \textbf{5280} & 11 & 11 & 0 \\
+F & \texttt{(2.5, 1.5, 1.5, 0.5)} & \textbf{5040} & 5 & 5 & 0 \\
+F & \texttt{(2.5, 2.5, 0.5, 0.5)} & \textbf{4928} & 3 & 3 & 0 \\
+F & \texttt{(2.5, 1.5, 0.5, 0.5)} & \textbf{2560} & 24 & 24 & 0 \\
+F & \texttt{(3.5, 0.5, 0.5, 0.5)} & \textbf{1920} & 22 & 22 & 0 \\
+F & \texttt{(1.5, 1.5, 1.5, 0.5)} & \textbf{768} & 9 & 9 & 0 \\
+F & \texttt{(1.5, 1.5, 1.5, 1.5)} & \textbf{672} & 2 & 2 & 0 \\
+F & \texttt{(2.5, 0.5, 0.5, 0.5)} & \textbf{576} & 39 & 39 & 0 \\
+F & \texttt{(1.5, 1.5, 0.5, 0.5)} & \textbf{432} & 30 & 30 & 0 \\
+F & \texttt{(1.5, 0.5, 0.5, 0.5)} & \textbf{128} & 49 & 49 & 0 \\
+F & \texttt{(0.5, 0.5, 0.5, 0.5)} & \textbf{16} & 30 & 30 & 0 \\
+\bottomrule
+\caption{Level 10 term-by-term $\mathrm{SO}(9)$ branching reconstruction verification (exact difference = 0).}
+\end{longtable}
+
+\begin{thebibliography}{9}
+\bibitem{Bars1995} I.~Bars, \emph{Stringy Evidence for D=11 Structure in Strongly Coupled Type II-A Superstring}, Phys.\ Rev.\ Lett.\ \textbf{74} (1995) 3244, \href{https://arxiv.org/abs/hep-th/9503228}{\texttt{arXiv:hep-th/9503228}}.
+\end{thebibliography}
+
+\end{document}

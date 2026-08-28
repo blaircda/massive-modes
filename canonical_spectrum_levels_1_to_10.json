@@ -1,0 +1,8961 @@
+{
+  "metadata": {
+    "title": "Canonical Superstring Massive Spectrum and D=11 SO(10) Multiplets",
+    "levels": 10,
+    "theory": "10D Green-Schwarz Open Superstring / D=11 M-theory Compactification",
+    "conjecture": "Itzhak Bars, hep-th/9503228, Section III.B",
+    "literature_inputs_used": false,
+    "algorithm_statement": "Ab initio evaluation of the GS partition function, lexicographic polynomial division by (8_v + 8_s), D_4 Weyl character inversion, B_4 -> D_4 branching inversion, and D_5 -> B_4 exact linear integer programming lift.",
+    "generated_at_epoch": 1787923910,
+    "universal_massive_susy_factor": "M_susy = ((44 + 84)_B + 128_F) = (128_B + 128_F)"
+  },
+  "levels": {
+    "1": {
+      "level": 1,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 8,
+          "fermions": 8,
+          "total": 16
+        },
+        "r_n_prefactor": {
+          "bosons": 1,
+          "fermions": 0,
+          "total": 1
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 1,
+          "fermions": 0,
+          "total": 1
+        },
+        "R_n_so10_lift": {
+          "bosons": 1,
+          "fermions": 0,
+          "total": 1
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "2": {
+      "level": 2,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 72,
+          "fermions": 72,
+          "total": 144
+        },
+        "r_n_prefactor": {
+          "bosons": 9,
+          "fermions": 0,
+          "total": 9
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 10,
+          "fermions": 0,
+          "total": 10
+        },
+        "R_n_so10_lift": {
+          "bosons": 10,
+          "fermions": 0,
+          "total": 10
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 10
+          }
+        ],
+        "fermionic_irreps": []
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "3": {
+      "level": 3,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 480,
+          "fermions": 480,
+          "total": 960
+        },
+        "r_n_prefactor": {
+          "bosons": 44,
+          "fermions": 16,
+          "total": 60
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 54,
+          "fermions": 16,
+          "total": 70
+        },
+        "R_n_so10_lift": {
+          "bosons": 54,
+          "fermions": 16,
+          "total": 70
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 44
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 44
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 54
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "4": {
+      "level": 4,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 2632,
+          "fermions": 2632,
+          "total": 5264
+        },
+        "r_n_prefactor": {
+          "bosons": 201,
+          "fermions": 128,
+          "total": 329
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 255,
+          "fermions": 144,
+          "total": 399
+        },
+        "R_n_so10_lift": {
+          "bosons": 255,
+          "fermions": 144,
+          "total": 399
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 9
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 128
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 36
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 128
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 45
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 210
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 144
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "5": {
+      "level": 5,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 12528,
+          "fermions": 12528,
+          "total": 25056
+        },
+        "r_n_prefactor": {
+          "bosons": 846,
+          "fermions": 720,
+          "total": 1566
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 1101,
+          "fermions": 864,
+          "total": 1965
+        },
+        "R_n_so10_lift": {
+          "bosons": 1101,
+          "fermions": 864,
+          "total": 1965
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 84
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 36
+          },
+          {
+            "weight": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 84
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 576
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 120
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 320
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 660
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 144
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 720
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "6": {
+      "level": 6,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 53472,
+          "fermions": 53472,
+          "total": 106944
+        },
+        "r_n_prefactor": {
+          "bosons": 3468,
+          "fermions": 3216,
+          "total": 6684
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 4569,
+          "fermions": 4080,
+          "total": 8649
+        },
+        "R_n_so10_lift": {
+          "bosons": 4569,
+          "fermions": 4080,
+          "total": 8649
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 910
+          },
+          {
+            "weight": [
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 156
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 594
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 126
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 9
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 432
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 4,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 84
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 910
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 594
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 126
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 576
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 432
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 10
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 126
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 320
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 945
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1386
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1782
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 144
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 720
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 2640
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1122,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 910,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 594,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 126,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 1920,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 432,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "7": {
+      "level": 7,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 209088,
+          "fermions": 209088,
+          "total": 418176
+        },
+        "r_n_prefactor": {
+          "bosons": 13240,
+          "fermions": 12896,
+          "total": 26136
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 17809,
+          "fermions": 16976,
+          "total": 34785
+        },
+        "R_n_so10_lift": {
+          "bosons": 17809,
+          "fermions": 16976,
+          "total": 34785
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              4.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 450
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              3.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 910
+          },
+          {
+            "weight": [
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 156
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 924
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 594
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 126
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 3,
+            "dim": 84
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 9
+          },
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 432
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 4,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 4,
+            "dim": 84
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 910
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 2,
+            "dim": 594
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 2,
+            "dim": 126
+          },
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 924
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 6,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 8,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 576
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 432
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 2560
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 10
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 120
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 210
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 54
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 945
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 1050
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 770
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1386
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4312
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4608
+          },
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4290
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 144
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 720
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 2640
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 7920
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 2508,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 2457,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1122,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 924,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 910,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 594,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 495,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 126,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 5280,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 2560,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 1920,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 432,
+            "type": "F",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 8,
+            "reconstructed_multiplicity": 8,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "8": {
+      "level": 8,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 760392,
+          "fermions": 760392,
+          "total": 1520784
+        },
+        "r_n_prefactor": {
+          "bosons": 47817,
+          "fermions": 47232,
+          "total": 95049
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 65626,
+          "fermions": 64208,
+          "total": 129834
+        },
+        "R_n_so10_lift": {
+          "bosons": 65626,
+          "fermions": 64208,
+          "total": 129834
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 5148
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              4.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              4.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 450
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              3.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 910
+          },
+          {
+            "weight": [
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 156
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1650
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 924
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 4,
+            "dim": 594
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 3,
+            "dim": 126
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 84
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 9
+          },
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 768
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 432
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 7,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 11,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 9,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 7,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 10,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 10,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 6,
+            "dim": 84
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 910
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 6,
+            "dim": 594
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 5,
+            "dim": 126
+          },
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 2,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 3,
+            "dim": 924
+          },
+          {
+            "weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 5148
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1650
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 10,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 15,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 10,
+            "dim": 576
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 7,
+            "dim": 432
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 768
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 10
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 45
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 210
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 126
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 54
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 320
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 945
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1728
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 1050
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2970
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 210
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1386
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4312
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 4950
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4410
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4608
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 14784
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 12870
+          },
+          {
+            "weight": [
+              7.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 9438
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 144
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 560
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 1200
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 720
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 2640
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 15120
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 7920
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 20592
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 7700,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 7140,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 5148,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 3900,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 2574,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 2508,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 2457,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 1650,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1122,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 924,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 910,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 594,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 495,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 126,
+            "type": "B",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 9,
+            "reconstructed_multiplicity": 9,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 12672,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 9504,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 5280,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 2560,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 1920,
+            "type": "F",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 768,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 432,
+            "type": "F",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 15,
+            "reconstructed_multiplicity": 15,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "9": {
+      "level": 9,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 2600616,
+          "fermions": 2600616,
+          "total": 5201232
+        },
+        "r_n_prefactor": {
+          "bosons": 162917,
+          "fermions": 162160,
+          "total": 325077
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 228543,
+          "fermions": 226368,
+          "total": 454911
+        },
+        "R_n_so10_lift": {
+          "bosons": 228543,
+          "fermions": 226368,
+          "total": 454911
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              8.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9867
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 16302
+          },
+          {
+            "weight": [
+              6.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 20196
+          },
+          {
+            "weight": [
+              5.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 8748
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 12375
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              4.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              4.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 450
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 9009
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 5,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 910
+          },
+          {
+            "weight": [
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 156
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 1650
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 6,
+            "dim": 924
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 6,
+            "dim": 594
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 9,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 9,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 4,
+            "dim": 126
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 7,
+            "dim": 84
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 7,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 5,
+            "dim": 9
+          },
+          {
+            "weight": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 27456
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 27648
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 6,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 4928
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 5040
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 6,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 10,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 768
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 8,
+            "dim": 432
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 12,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 8,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 8,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 16,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 18,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 11,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 17,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 7,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 19,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 13,
+            "dim": 84
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 12,
+            "dim": 910
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 12,
+            "dim": 594
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 9,
+            "dim": 126
+          },
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 7,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 6,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 9,
+            "dim": 924
+          },
+          {
+            "weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 5148
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 2,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 3,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 1650
+          },
+          {
+            "weight": [
+              8.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9867
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 16302
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 20196
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 8748
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 12375
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 9009
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 2772
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 18,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 27,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 20,
+            "dim": 576
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 11,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 15,
+            "dim": 432
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 10,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 768
+          },
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 27456
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 27648
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 4928
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 5040
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 45
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 120
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 210
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 54
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 320
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 945
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 1728
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 1050
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 770
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2970
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 210
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 4312
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 4950
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4410
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 17920
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 660
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4608
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 14784
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 17325
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 16380
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 12870
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 42120
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 31680
+          },
+          {
+            "weight": [
+              8.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 19305
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 144
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 560
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 1200
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 720
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 8800
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 8064
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 2640
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 15120
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 7920
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 48048
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 20592
+          },
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 48048
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 20196,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 16302,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 12375,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              8.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9867,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 9009,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 8748,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 7700,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 7140,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 5148,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 3900,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 2574,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 2508,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 2457,
+            "type": "B",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 1650,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1122,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 924,
+            "type": "B",
+            "target_multiplicity": 9,
+            "reconstructed_multiplicity": 9,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 910,
+            "type": "B",
+            "target_multiplicity": 12,
+            "reconstructed_multiplicity": 12,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 594,
+            "type": "B",
+            "target_multiplicity": 12,
+            "reconstructed_multiplicity": 12,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 495,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 19,
+            "reconstructed_multiplicity": 19,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 126,
+            "type": "B",
+            "target_multiplicity": 9,
+            "reconstructed_multiplicity": 9,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 13,
+            "reconstructed_multiplicity": 13,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 18,
+            "reconstructed_multiplicity": 18,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 17,
+            "reconstructed_multiplicity": 17,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 16,
+            "reconstructed_multiplicity": 16,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 8,
+            "reconstructed_multiplicity": 8,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 27648,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 27456,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 12672,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 9504,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 5280,
+            "type": "F",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 5040,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 4928,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 2560,
+            "type": "F",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 1920,
+            "type": "F",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 768,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 20,
+            "reconstructed_multiplicity": 20,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 432,
+            "type": "F",
+            "target_multiplicity": 15,
+            "reconstructed_multiplicity": 15,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 27,
+            "reconstructed_multiplicity": 27,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 18,
+            "reconstructed_multiplicity": 18,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    },
+    "10": {
+      "level": 10,
+      "exact_dimensions": {
+        "fock_space": {
+          "bosons": 8435824,
+          "fermions": 8435824,
+          "total": 16871648
+        },
+        "r_n_prefactor": {
+          "bosons": 527806,
+          "fermions": 526672,
+          "total": 1054478
+        },
+        "R_n_cumulative_so9": {
+          "bosons": 756349,
+          "fermions": 753040,
+          "total": 1509389
+        },
+        "R_n_so10_lift": {
+          "bosons": 756349,
+          "fermions": 753040,
+          "total": 1509389
+        },
+        "dimension_match_so9_so10": true
+      },
+      "r_n": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              9.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 17875
+          },
+          {
+            "weight": [
+              7.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 33957
+          },
+          {
+            "weight": [
+              7.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 5148
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 46683
+          },
+          {
+            "weight": [
+              6.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 16302
+          },
+          {
+            "weight": [
+              6.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              5.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 23868
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 32725
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 20196
+          },
+          {
+            "weight": [
+              5.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 31500
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 8748
+          },
+          {
+            "weight": [
+              4.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 12375
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 5,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 7,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              4.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 450
+          },
+          {
+            "weight": [
+              3.0,
+              3.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4004
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 15444
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 9009
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 7,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              3.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 7,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 12,
+            "dim": 910
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 11,
+            "dim": 156
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 3,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 6,
+            "dim": 1650
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 9,
+            "dim": 924
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 15,
+            "dim": 594
+          },
+          {
+            "weight": [
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 17,
+            "dim": 231
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 10,
+            "dim": 44
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 10,
+            "dim": 126
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 10,
+            "dim": 84
+          },
+          {
+            "weight": [
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 13,
+            "dim": 36
+          },
+          {
+            "weight": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 12,
+            "dim": 9
+          },
+          {
+            "weight": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 1
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              7.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 54912
+          },
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 27456
+          },
+          {
+            "weight": [
+              5.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 68640
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 27648
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 6,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              3.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 24192
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 19712
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 7,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 11,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 4928
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 5040
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 14,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 19,
+            "dim": 576
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              1.5
+            ],
+            "mult": 2,
+            "dim": 672
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 768
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 15,
+            "dim": 432
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 22,
+            "dim": 128
+          },
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 12,
+            "dim": 16
+          }
+        ]
+      },
+      "R_n_cumulative": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 11,
+            "dim": 1
+          },
+          {
+            "weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 28,
+            "dim": 9
+          },
+          {
+            "weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 28,
+            "dim": 44
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 22,
+            "dim": 156
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 30,
+            "dim": 36
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 12,
+            "dim": 450
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 36,
+            "dim": 231
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 23,
+            "dim": 84
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 7,
+            "dim": 1122
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 24,
+            "dim": 910
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 27,
+            "dim": 594
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 19,
+            "dim": 126
+          },
+          {
+            "weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 2508
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 13,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 14,
+            "dim": 2457
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 11,
+            "dim": 495
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 18,
+            "dim": 924
+          },
+          {
+            "weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 2,
+            "dim": 5148
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 6,
+            "dim": 7140
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 7,
+            "dim": 7700
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 8,
+            "dim": 2574
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 10,
+            "dim": 3900
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 8,
+            "dim": 1650
+          },
+          {
+            "weight": [
+              8.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 9867
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 3,
+            "dim": 16302
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 2,
+            "dim": 20196
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 8748
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 3,
+            "dim": 12375
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 9009
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 4,
+            "dim": 2772
+          },
+          {
+            "weight": [
+              9.0,
+              0,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 17875
+          },
+          {
+            "weight": [
+              7.0,
+              1,
+              0,
+              0
+            ],
+            "mult": 1,
+            "dim": 33957
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              1,
+              0
+            ],
+            "mult": 1,
+            "dim": 46683
+          },
+          {
+            "weight": [
+              5.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 23868
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              1
+            ],
+            "mult": 1,
+            "dim": 32725
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 31500
+          },
+          {
+            "weight": [
+              3.0,
+              3.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4004
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 15444
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 30,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 49,
+            "dim": 128
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 39,
+            "dim": 576
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 22,
+            "dim": 1920
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 30,
+            "dim": 432
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 11,
+            "dim": 5280
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 24,
+            "dim": 2560
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 12672
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 11,
+            "dim": 9504
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 9,
+            "dim": 768
+          },
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 27456
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 27648
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 4928
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 5040
+          },
+          {
+            "weight": [
+              7.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 54912
+          },
+          {
+            "weight": [
+              5.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 68640
+          },
+          {
+            "weight": [
+              3.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 24192
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 19712
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              1.5
+            ],
+            "mult": 2,
+            "dim": 672
+          }
+        ]
+      },
+      "so10_decomposition": {
+        "bosonic_irreps": [
+          {
+            "weight": [
+              1.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 45
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 210
+          },
+          {
+            "weight": [
+              1.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 126
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 6,
+            "dim": 320
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 945
+          },
+          {
+            "weight": [
+              2.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 1728
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 770
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 2970
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 5940
+          },
+          {
+            "weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              3.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 5,
+            "dim": 210
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 1386
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 4312
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 8085
+          },
+          {
+            "weight": [
+              3.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 5,
+            "dim": 4950
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 4410
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 17920
+          },
+          {
+            "weight": [
+              3.0,
+              2.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 23040
+          },
+          {
+            "weight": [
+              3.0,
+              3.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 7644
+          },
+          {
+            "weight": [
+              4.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 3,
+            "dim": 660
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 4608
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 4,
+            "dim": 14784
+          },
+          {
+            "weight": [
+              4.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 2,
+            "dim": 17325
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 16380
+          },
+          {
+            "weight": [
+              4.0,
+              2.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 68640
+          },
+          {
+            "weight": [
+              5.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 2,
+            "dim": 1782
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 12870
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 42120
+          },
+          {
+            "weight": [
+              5.0,
+              1,
+              1,
+              1,
+              1.0
+            ],
+            "mult": 1,
+            "dim": 50050
+          },
+          {
+            "weight": [
+              5.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 48510
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 31680
+          },
+          {
+            "weight": [
+              6.0,
+              1,
+              1,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 105105
+          },
+          {
+            "weight": [
+              7.0,
+              1,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 70785
+          },
+          {
+            "weight": [
+              9.0,
+              0,
+              0,
+              0,
+              0.0
+            ],
+            "mult": 1,
+            "dim": 37180
+          }
+        ],
+        "fermionic_irreps": [
+          {
+            "weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 16
+          },
+          {
+            "weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 8,
+            "dim": 144
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 560
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 1200
+          },
+          {
+            "weight": [
+              1.5,
+              1.5,
+              1.5,
+              1.5,
+              1.5
+            ],
+            "mult": 2,
+            "dim": 672
+          },
+          {
+            "weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 8,
+            "dim": 720
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 7,
+            "dim": 3696
+          },
+          {
+            "weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 4,
+            "dim": 8800
+          },
+          {
+            "weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 8064
+          },
+          {
+            "weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 2640
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 5,
+            "dim": 15120
+          },
+          {
+            "weight": [
+              3.5,
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 38016
+          },
+          {
+            "weight": [
+              3.5,
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 43680
+          },
+          {
+            "weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 7920
+          },
+          {
+            "weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 3,
+            "dim": 48048
+          },
+          {
+            "weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 2,
+            "dim": 20592
+          },
+          {
+            "weight": [
+              5.5,
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 129360
+          },
+          {
+            "weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 48048
+          },
+          {
+            "weight": [
+              7.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "mult": 1,
+            "dim": 102960
+          }
+        ]
+      },
+      "branching_reconstruction_verification": {
+        "status": "PASSED",
+        "all_multiplicities_non_negative": true,
+        "exact_difference_zero_all_terms": true,
+        "term_by_term_table": [
+          {
+            "so9_weight": [
+              6.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 46683,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              7.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 33957,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 32725,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 31500,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 23868,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 20196,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              9.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 17875,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 16302,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "so9_dim": 15444,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 12375,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              8.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9867,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 9009,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 8748,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 7700,
+            "type": "B",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 7140,
+            "type": "B",
+            "target_multiplicity": 6,
+            "reconstructed_multiplicity": 6,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              7.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 5148,
+            "type": "B",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              3.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 4004,
+            "type": "B",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 3900,
+            "type": "B",
+            "target_multiplicity": 10,
+            "reconstructed_multiplicity": 10,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 13,
+            "reconstructed_multiplicity": 13,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              1.0,
+              1.0
+            ],
+            "so9_dim": 2772,
+            "type": "B",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 2574,
+            "type": "B",
+            "target_multiplicity": 8,
+            "reconstructed_multiplicity": 8,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 2508,
+            "type": "B",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 2457,
+            "type": "B",
+            "target_multiplicity": 14,
+            "reconstructed_multiplicity": 14,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              1.0,
+              0.0
+            ],
+            "so9_dim": 1650,
+            "type": "B",
+            "target_multiplicity": 8,
+            "reconstructed_multiplicity": 8,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1122,
+            "type": "B",
+            "target_multiplicity": 7,
+            "reconstructed_multiplicity": 7,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 924,
+            "type": "B",
+            "target_multiplicity": 18,
+            "reconstructed_multiplicity": 18,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 910,
+            "type": "B",
+            "target_multiplicity": 24,
+            "reconstructed_multiplicity": 24,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 594,
+            "type": "B",
+            "target_multiplicity": 27,
+            "reconstructed_multiplicity": 27,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              2.0,
+              0.0,
+              0.0
+            ],
+            "so9_dim": 495,
+            "type": "B",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 450,
+            "type": "B",
+            "target_multiplicity": 12,
+            "reconstructed_multiplicity": 12,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 231,
+            "type": "B",
+            "target_multiplicity": 36,
+            "reconstructed_multiplicity": 36,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 156,
+            "type": "B",
+            "target_multiplicity": 22,
+            "reconstructed_multiplicity": 22,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              1
+            ],
+            "so9_dim": 126,
+            "type": "B",
+            "target_multiplicity": 19,
+            "reconstructed_multiplicity": 19,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              1,
+              0
+            ],
+            "so9_dim": 84,
+            "type": "B",
+            "target_multiplicity": 23,
+            "reconstructed_multiplicity": 23,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 44,
+            "type": "B",
+            "target_multiplicity": 28,
+            "reconstructed_multiplicity": 28,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              1,
+              0,
+              0
+            ],
+            "so9_dim": 36,
+            "type": "B",
+            "target_multiplicity": 30,
+            "reconstructed_multiplicity": 30,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 9,
+            "type": "B",
+            "target_multiplicity": 28,
+            "reconstructed_multiplicity": 28,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.0,
+              0,
+              0,
+              0
+            ],
+            "so9_dim": 1,
+            "type": "B",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 68640,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              7.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 54912,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 27648,
+            "type": "F",
+            "target_multiplicity": 4,
+            "reconstructed_multiplicity": 4,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              6.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 27456,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 24192,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 19712,
+            "type": "F",
+            "target_multiplicity": 1,
+            "reconstructed_multiplicity": 1,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              5.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 12672,
+            "type": "F",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 9504,
+            "type": "F",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              4.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 5280,
+            "type": "F",
+            "target_multiplicity": 11,
+            "reconstructed_multiplicity": 11,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 5040,
+            "type": "F",
+            "target_multiplicity": 5,
+            "reconstructed_multiplicity": 5,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              2.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 4928,
+            "type": "F",
+            "target_multiplicity": 3,
+            "reconstructed_multiplicity": 3,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 2560,
+            "type": "F",
+            "target_multiplicity": 24,
+            "reconstructed_multiplicity": 24,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              3.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 1920,
+            "type": "F",
+            "target_multiplicity": 22,
+            "reconstructed_multiplicity": 22,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              1.5,
+              0.5
+            ],
+            "so9_dim": 768,
+            "type": "F",
+            "target_multiplicity": 9,
+            "reconstructed_multiplicity": 9,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              1.5,
+              1.5
+            ],
+            "so9_dim": 672,
+            "type": "F",
+            "target_multiplicity": 2,
+            "reconstructed_multiplicity": 2,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              2.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 576,
+            "type": "F",
+            "target_multiplicity": 39,
+            "reconstructed_multiplicity": 39,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              1.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 432,
+            "type": "F",
+            "target_multiplicity": 30,
+            "reconstructed_multiplicity": 30,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              1.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 128,
+            "type": "F",
+            "target_multiplicity": 49,
+            "reconstructed_multiplicity": 49,
+            "difference": 0,
+            "matched": true
+          },
+          {
+            "so9_weight": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "so9_dim": 16,
+            "type": "F",
+            "target_multiplicity": 30,
+            "reconstructed_multiplicity": 30,
+            "difference": 0,
+            "matched": true
+          }
+        ]
+      }
+    }
+  }
+}

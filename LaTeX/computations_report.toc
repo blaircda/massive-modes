@@ -1,0 +1,65 @@
+\contentsline {section}{\numberline {1}Physics Overview}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Light-Cone Green-Schwarz Oscillators}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Universal Massive Supersymmetry Factorization}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}The Bars Lift Proposals}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Representation Theory Conventions}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lie Algebra Definitions and Weights}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Weyl Dimension Formulas}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Exact Gelfand-Tsetlin Branching Rules}{5}{subsection.2.3}%
+\contentsline {paragraph}{The Critical Role of Chirality at Level 6:}{5}{section*.2}%
+\contentsline {section}{\numberline {3}Methodology and Group Theory Architecture in Code}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Statement of the Ab Initio Algorithm}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Uniqueness of Polynomial Division via Integral Domain Property}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Codebase Architecture and Module Reference}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Verification Summary (Levels 1 to 10)}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {A}Detailed Level-by-Level Verification Data}{7}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Level $n = 1$ Representation Data}{7}{subsection.A.1}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{7}{section*.3}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{7}{section*.4}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{7}{section*.5}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{7}{section*.6}%
+\contentsline {subsection}{\numberline {A.2}Level $n = 2$ Representation Data}{7}{subsection.A.2}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{7}{section*.7}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{7}{section*.8}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{7}{section*.9}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{8}{section*.10}%
+\contentsline {subsection}{\numberline {A.3}Level $n = 3$ Representation Data}{8}{subsection.A.3}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{8}{section*.11}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{8}{section*.12}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{8}{section*.13}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{8}{section*.14}%
+\contentsline {subsection}{\numberline {A.4}Level $n = 4$ Representation Data}{8}{subsection.A.4}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{8}{section*.15}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{8}{section*.16}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{9}{section*.17}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{9}{section*.18}%
+\contentsline {subsection}{\numberline {A.5}Level $n = 5$ Representation Data}{9}{subsection.A.5}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{9}{section*.19}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{9}{section*.20}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{9}{section*.21}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{9}{section*.22}%
+\contentsline {subsection}{\numberline {A.6}Level $n = 6$ Representation Data}{10}{subsection.A.6}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{10}{section*.23}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{10}{section*.24}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{10}{section*.25}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{10}{section*.26}%
+\contentsline {subsection}{\numberline {A.7}Level $n = 7$ Representation Data}{11}{subsection.A.7}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{11}{section*.27}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{11}{section*.28}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{11}{section*.29}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{12}{section*.30}%
+\contentsline {subsection}{\numberline {A.8}Level $n = 8$ Representation Data}{12}{subsection.A.8}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{12}{section*.31}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{12}{section*.32}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{13}{section*.33}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{13}{section*.34}%
+\contentsline {subsection}{\numberline {A.9}Level $n = 9$ Representation Data}{14}{subsection.A.9}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{14}{section*.35}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{14}{section*.36}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{15}{section*.37}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{15}{section*.38}%
+\contentsline {subsection}{\numberline {A.10}Level $n = 10$ Representation Data}{16}{subsection.A.10}%
+\contentsline {paragraph}{Single-Level Prefactor $r_n$ (in $\mathrm {SO}(9)$):}{16}{section*.39}%
+\contentsline {paragraph}{Cumulative Spectrum $R_n = \DOTSB \sum@ \slimits@ _{l=1}^n r_l$ (in $\mathrm {SO}(9)$):}{16}{section*.40}%
+\contentsline {paragraph}{$\mathrm {SO}(10)$ Supermultiplet Decomposition:}{17}{section*.41}%
+\contentsline {paragraph}{$\mathrm {SO}(9)$ Term-by-Term Branching Reconstruction Verification:}{17}{section*.42}%
