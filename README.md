@@ -1,3 +1,5 @@
+# N.B. This repository is superseded and available as a temporary record of initial efforts on this project ** 
+
 # Massive Superstring Spectrum and D=11 Structure (hep-th/9503228)
 
 An exact algebraic framework to test and verify the conjecture by **Itzhak Bars** in [*Stringy Evidence for D=11 Structure in Strongly Coupled Type II-A Superstring*](https://arxiv.org/abs/hep-th/9503228) (hep-th/9503228) across open and closed superstring massive levels.
