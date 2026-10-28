@@ -1,4 +1,4 @@
-# N.B. This repository is superseded and available as a temporary record of initial efforts on this project ** 
+# N.B. This repository is superseded and available as a temporary record of initial efforts on this project
 
 # Massive Superstring Spectrum and D=11 Structure (hep-th/9503228)
 
